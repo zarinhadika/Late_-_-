@@ -12,25 +12,21 @@ import java.util.Set;
  *
  * @author New Dynamic
  */
-
 class Solution {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {     Set<Integer> setting = new HashSet<>();
-      for(int left = 0;left<nums.length;left++)
-      {
-          if(left>k) setting.remove(nums[left-k-1]);
-          if(!setting.add(nums[left])) return true;
-      }
-      return false;
-      }
-    
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> setter = new HashSet<>();
+        for(int num:nums)
+        {
+            if(setter.contains(num))
+            {
+                return true;
+            }
+            setter.add(num);
 
+        }
+        return false;
+    }
 }
-
-    
-
-
-
-
 public class ContainsDuplicate {
 
     /**
@@ -38,7 +34,6 @@ public class ContainsDuplicate {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
     }
     
 }
